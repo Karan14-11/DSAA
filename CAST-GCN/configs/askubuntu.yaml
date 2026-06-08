@@ -1,0 +1,40 @@
+training:
+  batch_size: 2000
+  num_neighbors: 10
+  time_window: null
+  epochs: 200
+  lr: 0.005
+  device: cuda
+
+model:
+  memory_dim: 128
+  message_dim: 128
+  embedding_dim: 128
+  time_dim: 100
+
+model_gcn:
+  hidden_dim: 128
+  embed_dim: 64
+  dropout: 0.3
+  feature_dim: 32
+
+snapshot:
+  num_total: 50
+  num_train: 40
+  num_test: 10
+
+incremental:
+  finetune_epochs: 25
+  finetune_lr: 0.0005
+  k_hop: 2
+  svd_k: 5
+  svd_top_k: 5
+
+regularization:
+  lambda_smooth: 0.1
+  lambda_degree: 0.05
+  lambda_degree_dist: 0.05
+  lambda_neighborhood: 0.05
+  lambda_diversity: 0.02
+
+data_file: ../processed/askubuntu_compact.pt
